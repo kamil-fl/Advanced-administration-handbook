@@ -27,6 +27,10 @@ Also, since you'll be writing code, it would be good to familiarize yourself wit
 
 Beyond that, these are some resources you might find helpful for each of the languages.
 
+## Automatyzacja i integracje (n8n)
+
+- [Rozszerzenia i ulepszenia dla instancji n8n](https://developer.wordpress.org/advanced-administration/resources/n8n/)
+
 ## HTML
 
 - [W3Schools HTML](https://www.w3schools.com/tags/default.asp)
@@ -71,4 +75,3 @@ Other than that, these are some solid resources for you to review:
 - [JavaScript: The Definitive Guide](https://www.oreilly.com/library/view/javascript-the-definitive/9781491952016/)
 - [PHP Cookbook](https://www.oreilly.com/library/view/php-cookbook/9781098121310/)
 - [Programming PHP](https://www.oreilly.com/library/view/programming-php-4th/9781492054122/)
-
