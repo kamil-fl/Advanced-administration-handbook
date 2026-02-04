@@ -14,6 +14,18 @@ When talking about Nginx, it is important to know that there are multiple ways t
 
 This guide is not going to cover how to install and configure Nginx, so this assumes that you have already installed Nginx and have a basic understanding of how to work with and debug it.
 
+## Troubleshooting
+
+### Nginx fails to start with `open() "/etc/nginx/mime.types" failed`
+
+If `nginx -t` or `systemctl start nginx` fails with an error about `/etc/nginx/mime.types`, the configuration is trying to `include mime.types;` but the file is missing. This usually happens after a partial package install or a failed upgrade. On Debian/Ubuntu systems, reinstalling or reconfiguring the Nginx package restores the file; for example:
+
+```
+sudo apt-get install --reinstall nginx-common
+```
+
+After that, confirm the `include` path matches where your distribution installs `mime.types` (for example `/etc/nginx/mime.types`). If you have a custom install, update the `include` path to the correct location for your environment. Once the file is restored or the path is corrected, re-run `nginx -t` before starting the service.
+
 ## Generic and Multi-Site Support
 
 To make WordPress work with Nginx you have to configure the backend php-cgi. The options available are `fastcgi` or `php-fpm`. Here, php-fpm is being used because it is included with PHP 5.3+, so installing it is straight forward.
@@ -692,4 +704,3 @@ For WordPress Nginx scripted installation [CentminMod](https://centminmod.com/ng
 
 - [Securing Nginx and PHP](http://kbeezie.com/securing-nginx-php/)
 - [Setting up PHP-FastCGI and nginx? Don’t trust the tutorials: check your configuration!](https://nealpoole.com/blog/2011/04/setting-up-php-fastcgi-and-nginx-dont-trust-the-tutorials-check-your-configuration/)
-
